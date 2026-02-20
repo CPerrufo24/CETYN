@@ -34,6 +34,7 @@
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
+            min-height: max(884px, 100dvh);
         }
 
         .glass-nav {
@@ -44,10 +45,186 @@
         .dark .glass-nav {
             background-color: rgba(15, 23, 42, 0.8);
         }
-    </style>
-    <style>
-        body {
-            min-height: max(884px, 100dvh);
+
+        /* === VERTEX AI ENHANCEMENTS === */
+
+        /* Pulsing CTA button glow */
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+            animation: pulse-glow 2.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 18px 2px rgba(0, 71, 171, 0.35), 0 4px 24px rgba(0, 71, 171, 0.25);
+            }
+
+            50% {
+                box-shadow: 0 0 36px 8px rgba(0, 71, 171, 0.55), 0 4px 36px rgba(0, 71, 171, 0.4);
+            }
+        }
+
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.5s ease-in-out;
+            z-index: -1;
+        }
+
+        .btn-primary:hover::after {
+            transform: rotate(0deg);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Gradient shimmer on hero span */
+        .gradient-underline {
+            background: linear-gradient(90deg, #0047AB 0%, #60a5fa 50%, #0047AB 100%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            display: inline;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* Floating particles background */
+        .particle-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .particle {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: rgba(0, 71, 171, 0.25);
+            animation: float-particle 15s linear infinite;
+        }
+
+        .particle:nth-child(1) {
+            top: 10%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .particle:nth-child(2) {
+            top: 30%;
+            left: 60%;
+            animation-delay: 2s;
+        }
+
+        .particle:nth-child(3) {
+            top: 60%;
+            left: 10%;
+            animation-delay: 4s;
+        }
+
+        .particle:nth-child(4) {
+            top: 80%;
+            left: 70%;
+            animation-delay: 6s;
+        }
+
+        .particle:nth-child(5) {
+            top: 40%;
+            left: 40%;
+            animation-delay: 8s;
+            width: 4px;
+            height: 4px;
+        }
+
+        .particle:nth-child(6) {
+            top: 70%;
+            left: 30%;
+            animation-delay: 10s;
+        }
+
+        .particle:nth-child(7) {
+            top: 20%;
+            left: 90%;
+            animation-delay: 12s;
+        }
+
+        .particle:nth-child(8) {
+            top: 50%;
+            left: 5%;
+            animation-delay: 14s;
+            width: 4px;
+            height: 4px;
+        }
+
+        @keyframes float-particle {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            75% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100px) translateX(30px) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Card hover lift + border glow */
+        .card-wrapper {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-wrapper:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 24px rgba(0, 71, 171, 0.18), 0 0 0 1.5px rgba(0, 71, 171, 0.15);
+        }
+
+        /* Nav link active underline animation */
+        .nav-link {
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background-color: #0047AB;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 70%;
         }
     </style>
 </head>
@@ -60,9 +237,11 @@
                     <img alt="CETYN Logo" class="h-10 md:h-12 w-auto object-contain" src="CETYN.png" />
                 </div>
                 <div class="hidden md:flex space-x-8 items-center">
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Servicios</a>
-                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#experiencia">Nosotros</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link" href="#">Inicio</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link"
+                        href="#servicios">Servicios</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors nav-link"
+                        href="#experiencia">Nosotros</a>
                     <a class="bg-primary text-white px-5 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20"
                         href="#">
                         Inscribirse
@@ -77,6 +256,17 @@
         </div>
     </nav>
     <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Particle background -->
+        <div class="particle-background">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
         <div
             class="absolute top-0 right-0 -z-10 w-1/3 h-full bg-gradient-to-l from-blue-50/50 to-transparent dark:from-blue-900/10 hidden lg:block">
         </div>
@@ -87,14 +277,15 @@
                     Líderes en Capacitación Normativa
                 </span>
                 <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-                    Potenciamos la Excelencia en <span class="text-primary">Seguridad y Salud</span> Ocupacional
+                    Potenciamos la Excelencia en <span class="text-primary gradient-underline">Seguridad y Salud</span>
+                    Ocupacional
                 </h1>
                 <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl">
                     Capacitación virtual y presencial de alto nivel para empresas líderes que buscan elevar sus
                     estándares de cumplimiento y seguridad.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a class="flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-blue-500/30"
+                    <a class="flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-blue-500/30 btn-primary"
                         href="#servicios" data-aos="fade-right" data-aos-delay="200">
                         Ver Cursos
                         <span class="material-icons ml-2">arrow_forward</span>
@@ -139,7 +330,7 @@
                         Análisis exhaustivo y actualización legal constante para garantizar el cumplimiento normativo.
                     </p>
                 </div>
-                <div class="group p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
+                <div class="group p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300 card-wrapper"
                     data-aos="zoom-in" data-aos-delay="300">
                     <div
                         class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center text-primary dark:text-blue-300 mb-6 group-hover:scale-110 transition-transform">
@@ -291,9 +482,13 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({
-            duration: 1000,
+            duration: 800,
+            easing: 'ease-out-quart',
+            delay: 50,
             once: true,
-            offset: 100
+            mirror: false,
+            offset: 80,
+            anchorPlacement: 'top-bottom',
         });
     </script>
 </body>

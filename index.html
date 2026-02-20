@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CETYN - Centro de Entrenamiento Técnico y Normativo</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0047AB", // Deep professional blue
+                        "background-light": "#F8FAFC",
+                        "background-dark": "#0F172A",
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem",
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .dark .glass-nav {
+            background-color: rgba(15, 23, 42, 0.8);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-100 antialiased">
+    <nav class="fixed top-0 w-full z-50 glass-nav border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <div class="flex-shrink-0">
+                    <img alt="CETYN Logo" class="h-10 md:h-12 w-auto object-contain" src="CETYN.png" />
+                </div>
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#servicios">Servicios</a>
+                    <a class="text-sm font-medium hover:text-primary transition-colors" href="#experiencia">Nosotros</a>
+                    <a class="bg-primary text-white px-5 py-2.5 rounded-full font-semibold hover:bg-blue-700 transition-all shadow-lg shadow-blue-500/20"
+                        href="#">
+                        Inscribirse
+                    </a>
+                </div>
+                <div class="md:hidden">
+                    <button class="p-2 text-slate-600 dark:text-slate-300">
+                        <span class="material-icons">menu</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <div
+            class="absolute top-0 right-0 -z-10 w-1/3 h-full bg-gradient-to-l from-blue-50/50 to-transparent dark:from-blue-900/10 hidden lg:block">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl" data-aos="fade-up">
+                <span
+                    class="inline-block px-4 py-1.5 rounded-full bg-blue-100 dark:bg-blue-900/30 text-primary dark:text-blue-400 text-sm font-semibold mb-6">
+                    Líderes en Capacitación Normativa
+                </span>
+                <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                    Potenciamos la Excelencia en <span class="text-primary">Seguridad y Salud</span> Ocupacional
+                </h1>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed max-w-2xl">
+                    Capacitación virtual y presencial de alto nivel para empresas líderes que buscan elevar sus
+                    estándares de cumplimiento y seguridad.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a class="flex items-center justify-center px-8 py-4 bg-primary text-white font-bold rounded-xl hover:bg-blue-700 transition-all transform hover:-translate-y-0.5 shadow-xl shadow-blue-500/30"
+                        href="#servicios" data-aos="fade-right" data-aos-delay="200">
+                        Ver Cursos
+                        <span class="material-icons ml-2">arrow_forward</span>
+                    </a>
+                    <a class="flex items-center justify-center px-8 py-4 bg-white dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 font-bold rounded-xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-all"
+                        href="#" data-aos="fade-left" data-aos-delay="200">
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute -bottom-24 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-blue-500/5 blur-[120px] rounded-full -z-10">
+        </div>
+    </section>
+    <section class="py-20 bg-white dark:bg-slate-900/50" id="servicios">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Nuestros Servicios</h2>
+                <div class="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="group p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
+                    data-aos="zoom-in" data-aos-delay="100">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center text-primary dark:text-blue-300 mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons text-3xl">devices</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Capacitación Virtual/Presencial</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Programas adaptables diseñados para maximizar el aprendizaje en cualquier modalidad.
+                    </p>
+                </div>
+                <div class="group p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
+                    data-aos="zoom-in" data-aos-delay="200">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center text-primary dark:text-blue-300 mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons text-3xl">gavel</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Estudios Normativos</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Análisis exhaustivo y actualización legal constante para garantizar el cumplimiento normativo.
+                    </p>
+                </div>
+                <div class="group p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
+                    data-aos="zoom-in" data-aos-delay="300">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center text-primary dark:text-blue-300 mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons text-3xl">eco</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Protección Ambiental</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Soluciones sostenibles y gestión de impacto ambiental para un futuro responsable.
+                    </p>
+                </div>
+                <div class="group p-8 bg-background-light dark:bg-slate-800 rounded-3xl border border-slate-100 dark:border-slate-700 hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-300"
+                    data-aos="zoom-in" data-aos-delay="400">
+                    <div
+                        class="w-14 h-14 bg-blue-100 dark:bg-blue-900/40 rounded-2xl flex items-center justify-center text-primary dark:text-blue-300 mb-6 group-hover:scale-110 transition-transform">
+                        <span class="material-icons text-3xl">settings_suggest</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sistemas de Gestión</h3>
+                    <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed">
+                        Implementación y optimización de sistemas bajo estándares internacionales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-20 lg:py-32 overflow-hidden" id="experiencia">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative" data-aos="fade-right">
+                    <div class="relative z-10 rounded-[2rem] overflow-hidden shadow-2xl">
+                        <img alt="Professional training session"
+                            class="w-full h-full object-cover aspect-video lg:aspect-square"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd6ZpJhHESGfeRdqAhAiORq5vtXI92NsL-F048T-jVZclSXr9kVjs8JZ3FlfARBCfPLO5uxbbqtb6mg63oCDDSwjSaxkvL16v5SWRn8GVDct-cLv5ulwR30d6gJTmH5asV1N7xu8YrbO2NyAW_v7FxoZPTAXQ5Z5qKhAJLAMy32ejPQzGuX-7fNOeDY444TwD1OUey3O-1KpxSK7mDDlAu0TQYlctu14Fr0cNzbdeybPCZxzo4COh3rOCahkNbjcl6X7oUTTd92ag" />
+                        <div class="absolute inset-0 bg-primary/20 mix-blend-multiply"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 lg:-bottom-10 lg:-right-10 bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 z-20"
+                        data-aos="zoom-in" data-aos-delay="400">
+                        <div class="flex items-center gap-4">
+                            <span class="text-4xl font-black text-primary">15+</span>
+                            <div class="text-sm font-bold uppercase tracking-wider leading-tight">
+                                Años de<br />Experiencia
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2" data-aos="fade-left">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-8 leading-tight">Confianza y Experiencia que Respaldan
+                        tu Seguridad</h2>
+                    <p class="text-slate-600 dark:text-slate-400 mb-10 text-lg">
+                        En CETYN, entendemos que la capacitación no es solo un requisito legal, sino una inversión en el
+                        activo más valioso de su empresa: su gente.
+                    </p>
+                    <div class="space-y-6">
+                        <div class="flex gap-5">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-icons">verified</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Certificación Internacional</h4>
+                                <p class="text-slate-500 dark:text-slate-400">Contamos con acreditaciones que validan la
+                                    calidad de nuestros procesos formativos.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-icons">groups</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Expertos de la Industria</h4>
+                                <p class="text-slate-500 dark:text-slate-400">Nuestro equipo está conformado por
+                                    especialistas con amplia trayectoria sectorial.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-5">
+                            <div
+                                class="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-icons">trending_up</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Resultados Medibles</h4>
+                                <p class="text-slate-500 dark:text-slate-400">Enfoque orientado a la reducción de
+                                    incidentes y mejora de la cultura organizacional.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 md:col-span-2">
+                    <img alt="CETYN Logo" class="h-10 w-auto brightness-0 invert mb-6"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVATQIYaYH9lsoiLfERP9T2VU5mlJx-ZSRAeijgfOxp524ErlfP_Gq1voFgLAP-BEUxn149nkViAHTlyQmPylaCwvAHVIHw_kFZzDfskPFP0U6lKT9MtVGz2pdGApjjgHmUpQ5VRpaO_ENtjcLhbBizWmOOV0MQoWbi1HXKd1VxoV9ovpRKCExBRKL_NHk-Ik6ecj-YBhn6n1caAoTWo5bLfN_gd6wd28Q_EzusIgGz-4pGcNFhMTK4loBSV9ymPuVDAHAnWWkIdo" />
+                    <p class="text-slate-400 max-w-sm mb-6">
+                        Comprometidos con el desarrollo del talento humano y la seguridad industrial en toda la región.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">
+                            <i class="material-icons text-xl">facebook</i>
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-primary transition-colors"
+                            href="#">
+                            <i class="material-icons text-xl">link</i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Enlaces Rápidos</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li><a class="hover:text-white transition-colors" href="#">Sobre Nosotros</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Cursos Disponibles</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Blog de Seguridad</a></li>
+                        <li><a class="hover:text-white transition-colors" href="#">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-6">Contacto</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-center gap-3">
+                            <span class="material-icons text-primary text-sm">email</span>
+                            contacto@cetyn.com
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <span class="material-icons text-primary text-sm">phone</span>
+                            +1 234 567 890
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <span class="material-icons text-primary text-sm mt-1">location_on</span>
+                            Centro de Negocios Edificio A,<br />Piso 4, Ciudad Capital
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-10 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="text-slate-500 text-sm">© 2024 CETYN. Todos los derechos reservados. | Powered by Robinnovalab
+                </p>
+                <div class="flex space-x-8 text-sm text-slate-500">
+                    <a class="hover:text-white" href="#">Privacidad</a>
+                    <a class="hover:text-white" href="#">Términos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
+</body>
+
+</html>

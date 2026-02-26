@@ -1,0 +1,202 @@
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    min-height: max(884px, 100dvh);
+}
+
+.glass-nav {
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.dark .glass-nav {
+    background-color: rgba(15, 23, 42, 0.8);
+}
+
+/* === VERTEX AI ENHANCEMENTS === */
+
+/* Pulsing CTA button glow */
+.btn-primary {
+    position: relative;
+    overflow: hidden;
+    animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+
+    0%,
+    100% {
+        box-shadow: 0 0 18px 2px rgba(0, 71, 171, 0.35), 0 4px 24px rgba(0, 71, 171, 0.25);
+    }
+
+    50% {
+        box-shadow: 0 0 36px 8px rgba(0, 71, 171, 0.55), 0 4px 36px rgba(0, 71, 171, 0.4);
+    }
+}
+
+.btn-primary::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(45deg);
+    transition: all 0.5s ease-in-out;
+    z-index: -1;
+}
+
+.btn-primary:hover::after {
+    transform: rotate(0deg);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Gradient shimmer on hero span */
+.gradient-underline {
+    background: linear-gradient(90deg, #0047AB 0%, #60a5fa 50%, #0047AB 100%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 3s linear infinite;
+    display: inline;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* Floating particles background */
+.particle-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(0, 71, 171, 0.25);
+    animation: float-particle 15s linear infinite;
+}
+
+.particle:nth-child(1) {
+    top: 10%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.particle:nth-child(2) {
+    top: 30%;
+    left: 60%;
+    animation-delay: 2s;
+}
+
+.particle:nth-child(3) {
+    top: 60%;
+    left: 10%;
+    animation-delay: 4s;
+}
+
+.particle:nth-child(4) {
+    top: 80%;
+    left: 70%;
+    animation-delay: 6s;
+}
+
+.particle:nth-child(5) {
+    top: 40%;
+    left: 40%;
+    animation-delay: 8s;
+    width: 4px;
+    height: 4px;
+}
+
+.particle:nth-child(6) {
+    top: 70%;
+    left: 30%;
+    animation-delay: 10s;
+}
+
+.particle:nth-child(7) {
+    top: 20%;
+    left: 90%;
+    animation-delay: 12s;
+}
+
+.particle:nth-child(8) {
+    top: 50%;
+    left: 5%;
+    animation-delay: 14s;
+    width: 4px;
+    height: 4px;
+}
+
+@keyframes float-particle {
+    0% {
+        transform: translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    75% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-100px) translateX(30px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Card hover lift + border glow */
+.card-wrapper:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 71, 171, 0.18), 0 0 0 1.5px rgba(0, 71, 171, 0.15);
+}
+
+/* Secondary Premium Button */
+.btn-secondary {
+    @apply border border-slate-200 dark:border-slate-700 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-secondary:hover {
+    @apply border-primary/50 bg-white dark:bg-slate-800 -translate-y-0.5 shadow-lg shadow-blue-500/10;
+}
+
+
+/* Nav link active underline animation */
+.nav-link {
+    position: relative;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: #0047AB;
+    border-radius: 2px;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 70%;
+}
